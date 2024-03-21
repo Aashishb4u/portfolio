@@ -1,0 +1,228 @@
+<div class="relative h-screen overflow-y-auto overflow-x-hidden bg-plain-muted text-dark dark:bg-dark-2 dark:text-light">
+  <div class="mx-auto flex max-w-screen-2xl flex-col justify-between gap-4 p-4 lg:gap-6 lg:p-6">
+    <!-- Header -->
+    <header class="sticky top-0 z-50">
+      <app-header></app-header>
+    </header>
+    <!-- Header end -->
+
+
+    <main class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
+      <!-- Intro -->
+      <app-user-card></app-user-card>
+
+      <!-- Article -->
+      <div class="rounded-2xl bg-white p-6 shadow dark:bg-dark dark:shadow-dark lg:col-span-2 lg:p-10">
+        <figure class="aspect-video overflow-hidden rounded-lg">
+          <img [src]="blogDetails.img" alt="" class="h-full w-full object-cover">
+        </figure>
+
+        <ul class="mt-4 flex flex-wrap items-center gap-4 md:gap-6">
+          <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
+            {{blogDetails.time}} read
+          </li>
+          <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
+            {{blogDetails.datePosted}}
+          </li>
+          <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
+            1.5k Views
+          </li>
+        </ul>
+
+        <article class="prose mt-6 dark:prose-invert xl:prose-lg prose-headings:font-medium prose-blockquote:border-primary lg:mt-10">
+          <h2 class="lg:text-3xl md:text-2xl text-xl mb-4 lg:mb-10">
+            <strong>{{blogDetails.name}}</strong>
+          </h2>
+          <p>
+            Mastering the Art of Email Marketing tips for Success pattern of living,
+            including their behaviors, habits, and daily routines. It encompasses
+            everything from their diet, exercise routines, and sleep habits to their
+            recreational activities, social interactions, and work habits. A
+            person's lifestyle plays a significant role in determining their overall
+            well-being, including their physical and mental health, as well as their
+            happiness and satisfaction with life. A healthy lifestyle, which
+            includes a balanced diet, regular exercise, and a healthy sleep pattern,
+            can improve an individual's quality of life
+          </p>
+          <p>
+            A healthy lifestyle, which includes a balanced diet, regular exercise,
+            and a healthy sleep pattern, can improve an individual's quality of life
+            and reduce the risk of chronic diseases. On the other hand, unhealthy
+            lifestyle habits, such as smoking, excessive alcohol consumption, and a
+            sedentary lifestyle, can have negative impacts on one's health and
+            well-being. Thus, making intentional choices about one's lifestyle can
+            lead to improved health, happiness, and longevity.
+          </p>
+
+          <blockquote>
+            <p>
+              There are many different forms of travel, including road trips,
+              cruises, backpacking, and more, each offering its own unique set of
+              experiences and adventures.
+            </p>
+          </blockquote>
+
+          <p>
+            The Role of Storytelling in Email Marketing CampaignsEmail Marketing
+            Automation: Streamlining Your Campaigns for Results can improve an
+            individual's quality of life and reduce the risk of chronic diseases. On
+            the other hand, unhealthy lifestyle habits, such as smoking, excessive
+            alcohol consumption, and a sedentary lifestyle, can have negative
+            impacts on one's health and well-being. Thus, making intentional choices
+            about one's lifestyle can lead to improved health, happiness, and
+            longevity
+          </p>
+
+          <h2>The Role of Storytelling in Email Marketing</h2>
+
+          <p>
+            Lifestyle refers to an individual's habits, behaviors, and patterns of
+            living. encompasses all aspects of a person's daily life, including
+            their diet, exercise routine Lifestyle choices can also impact a
+            person's financial, social, and environmental well-being. A person's
+            lifestyle plays a major role in determining their overall health, happy
+            happiness, and longevity.
+          </p>
+
+          <ul>
+            <li>
+              Lifestyle refers to an individual's habits, behaviors, and patterns
+              of living.
+            </li>
+            <li>
+              encompasses all aspects of a person's daily life, including their
+              diet, exercise routine
+            </li>
+            <li>
+              Lifestyle choices can also impact a person's financial, social, and
+              environmental well-being.
+            </li>
+            <li>
+              A person's lifestyle plays a major role in determining their overall
+              health, happi
+            </li>
+          </ul>
+        </article>
+
+        <div class="mt-10 flex flex-wrap justify-between gap-4">
+          <div class="flex flex-wrap items-center gap-5">
+            <h6 class="text-lg font-medium text-dark dark:text-light">Tags:</h6>
+
+            <div class="flex flex-wrap gap-2">
+              <a class="cursor-pointer inline-flex items-center justify-center gap-2 rounded border border-light bg-white px-2 py-1 text-center text-xs font-medium leading-none text-dark transition hover:bg-primary hover:text-white dark:border-dark dark:bg-dark-2 dark:text-light/70 dark:hover:bg-primary dark:hover:text-white">
+                {{blogDetails.category}}
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-5">
+            <h6 class="text-lg font-medium text-dark dark:text-light">Share:</h6>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <a  (click)="shared.facebookLink()" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
+                <i class="text-xl fa fa-facebook-square"></i>
+              </a>
+              <a (click)="shared.instagramLink()" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
+                <i class="text-xl fa fa-instagram"></i>
+              </a>
+              <a (click)="shared.githubLink()" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
+                <i class="text-xl fa fa-github"></i>
+              </a>
+              <a (click)="shared.LinkedInLink()" class="cursor-pointer flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-transparent text-center text-slate-600 transition hover:text-primary focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-dark-2 dark:text-slate-500 dark:hover:text-primary">
+                <i class="text-xl fa fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 lg:mt-14">
+          <h3 class="text-2xl font-semibold leading-tight text-dark dark:text-light lg:text-3xl lg:leading-tight">
+            Related Post
+          </h3>
+          <div class="mt-6 lg:mt-8">
+            <ngx-slick-carousel class="carousel"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig">
+              <div ngxSlickItem *ngFor="let blog of blogs" (click)="checkBlog(blog.id)" class="flex mx-4 cursor-pointer">
+                <div class="relative">
+                  <a class="group block aspect-6/4 overflow-hidden rounded-lg">
+                    <img [src]="blog.img" alt=""
+                         class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105">
+                  </a>
+
+                  <!-- Tags -->
+                  <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                    <a href="#"
+                       class="inline-flex items-center justify-center gap-2 rounded bg-white px-2 py-1 text-center text-xs leading-none text-primary shadow transition hover:bg-primary hover:text-white">
+                      Development
+                    </a>
+                  </div>
+                </div>
+                <div class="mt-6">
+                  <h2 class="text-xl font-medium xl:text-2xl">
+                    <a
+                       class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary">
+                      Want To Upgrade Your Brain? Stop Doing These
+                      7 Things
+                    </a>
+                  </h2>
+
+                  <ul class="mt-4 flex flex-wrap items-center gap-2">
+                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
+                      15 min read
+                    </li>
+                    <li class="relative text-sm text-muted/50 before:mr-1 before:content-['\2022'] dark:text-muted">
+                      Nov 6, 2023
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ngx-slick-carousel>
+          </div>
+        </div>
+
+        <div class="mt-10 lg:mt-14">
+          <h3 class="text-2xl font-semibold leading-tight text-dark dark:text-light lg:text-3xl lg:leading-tight">
+            Leave a Comment
+          </h3>
+
+          <form action="#" class="mt-6 space-y-6 rounded-lg bg-light p-6 dark:bg-dark-2 lg:mt-8 xl:p-12">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div class="">
+                <label for="name" class="mb-2 block text-sm font-medium text-dark dark:text-light">
+                  Name
+                </label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">
+              </div>
+              <div class="">
+                <label for="email" class="mb-2 block text-sm font-medium text-dark dark:text-light">
+                  Email
+                </label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">
+              </div>
+            </div>
+
+            <div class="">
+              <label for="comment" class="mb-2 block text-sm font-medium text-dark dark:text-light">
+                Comment
+              </label>
+
+              <textarea name="Comment" id="comment" placeholder="Type details about your inquiry" rows="4" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20"></textarea>
+            </div>
+
+            <button type="submit" class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 text-center font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50">
+              <span>Post Comment</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5">
+                <path d="M17.5 11.667v-5h-5"></path>
+                <path d="m17.5 6.667-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+  </div>
+</div>
