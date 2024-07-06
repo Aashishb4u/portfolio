@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {SharedService} from "../../services/shared.service";
 
@@ -8,6 +8,7 @@ import {SharedService} from "../../services/shared.service";
   styleUrl: './single-blog.component.scss'
 })
 export class SingleBlogComponent implements OnInit {
+  @ViewChild('articleImage', { static: false }) articleImage: ElementRef;
   constructor(public router: Router, public route: ActivatedRoute, public shared: SharedService) {
 
   }
@@ -47,9 +48,11 @@ export class SingleBlogComponent implements OnInit {
   blogDetails: any;
 
   ngOnInit() {
-    this.blogId = this.route.snapshot.paramMap.get('id');
-    this.blogDetails = this.blogs.find(v => v.id === +this.blogId);
-    console.log(this.blogDetails);
+    this.route.params.subscribe((params: any) => {
+      this.blogId = +params['id'];
+      this.blogDetails = this.blogs.find(v => v.id === +this.blogId);
+      this.articleImage.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    });
   }
 
   checkBlog(id) {

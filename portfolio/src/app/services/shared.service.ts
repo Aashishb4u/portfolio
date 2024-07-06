@@ -9,6 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class SharedService {
   toggleMode = new BehaviorSubject('light');
+  emailAddress = 'contact@creativehand.co.in';
   constructor(@Inject(PLATFORM_ID) private platformId: object, public clipboard: Clipboard, public snackBar: MatSnackBar) { }
   websiteData: any = {
     socialMediaLinks: {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -7,9 +7,59 @@ import {Router} from "@angular/router";
   styleUrl: './blogs.component.scss'
 })
 export class BlogsComponent {
+  @ViewChild('header', { static: false }) header: ElementRef;
+  p: any = 1;
   constructor(public router: Router) {
   }
   blogs: any = [
+    {
+      id: 1,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-1.jpg"
+    },
+    {
+      id: 2,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-2.jpg"
+    },
+    {
+      id: 3,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-3.jpg"
+    },
+    {
+      id: 1,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-1.jpg"
+    },
+    {
+      id: 2,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-2.jpg"
+    },
+    {
+      id: 3,
+      name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
+      time: "15 min",
+      datePosted: "Nov 6, 2023",
+      category: "development",
+      img: "assets/blogs/blog-img-3.jpg"
+    },
     {
       id: 1,
       name: 'Want To Upgrade Your Brain? Stop Doing These 7 Things',
@@ -40,5 +90,9 @@ export class BlogsComponent {
   checkBlog(id) {
     console.log(id);
     this.router.navigate(['/blog', id]);
+  }
+
+  scrollToHeader() {
+    this.header.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }

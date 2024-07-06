@@ -14,9 +14,9 @@
       <!-- Blog -->
       <div class="rounded-2xl bg-white p-6 shadow dark:bg-dark dark:shadow-dark lg:col-span-2 lg:p-10">
         <div class="">
-          <h2 class="text-3xl font-semibold leading-tight text-dark dark:text-light lg:text-[40px] lg:leading-tight">
+          <h1 #header class="text-3xl font-semibold leading-tight text-dark dark:text-light lg:text-[40px] lg:leading-tight">
             My Recent Article and Publications
-          </h2>
+          </h1>
           <p class="mt-4 text-lg text-muted dark:text-light/70">
             I'm here to help if you're searching for a product designer to bring
             your idea to life or a design partner to help take your business to the
@@ -27,11 +27,11 @@
         <!-- Blog -->
         <div class="mt-10 lg:mt-14">
           <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
-            <ng-container *ngFor="let blog of blogs">
+            <ng-container *ngFor="let blog of blogs | paginate: { itemsPerPage: 4, currentPage: p }">
               <div >
                 <div (click)="checkBlog(blog.id)" class="relative cursor-pointer">
                   <a class="group block aspect-6/4 overflow-hidden rounded-lg">
-                    <img [src]="blog.img" alt="" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105">
+                    <img title="image" [src]="blog.img" alt="blog_image" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105">
                   </a>
 
                   <!-- Tags -->
@@ -62,46 +62,9 @@
           </div>
 
           <!-- Pagination -->
-          <nav class="mt-10 flex items-center justify-center gap-1.5">
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
-              </svg>
-
-              <span aria-hidden="true" class="sr-only">Previous</span>
-            </button>
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary" aria-current="page">
-              1
-            </button>
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-              2
-            </button>
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-              3
-            </button>
-            <div class="hs-tooltip inline-block">
-              <button type="button" class="hs-tooltip-toggle group inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-                <span class="text-xs group-hover:hidden">•••</span>
-                <svg class="hidden h-5 w-5 flex-shrink-0 group-hover:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m6 17 5-5-5-5"></path>
-                  <path d="m13 17 5-5-5-5"></path>
-                </svg>
-                <span class="hs-tooltip-content invisible absolute z-10 inline-block rounded bg-gray-900 px-2 py-1 text-xs font-medium text-white opacity-0 shadow-sm transition-opacity hs-tooltip-shown:visible hs-tooltip-shown:opacity-100 dark:bg-slate-700" role="tooltip" data-popper-placement="top" data-popper-reference-hidden="" data-popper-escaped="" style="position: fixed; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(834.444px, 1191.67px, 0px);">
-										Next 4 pages
-									</span>
-              </button>
-            </div>
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-              100
-            </button>
-            <button type="button" class="inline-flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-light text-center text-dark transition hover:border-primary hover:text-primary focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:text-muted dark:hover:border-primary dark:hover:text-primary">
-              <span aria-hidden="true" class="sr-only">Next</span>
-
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-4 w-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-              </svg>
-            </button>
-          </nav>
+          <div class="pagination-tab flex justify-center">
+            <pagination-controls class="my-custom-pagination" (pageChange)="p = $event; scrollToHeader()"></pagination-controls>
+          </div>
           <!-- End Pagination -->
         </div>
       </div>

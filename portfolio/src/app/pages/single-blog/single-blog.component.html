@@ -12,9 +12,9 @@
       <app-user-card></app-user-card>
 
       <!-- Article -->
-      <div class="rounded-2xl bg-white p-6 shadow dark:bg-dark dark:shadow-dark lg:col-span-2 lg:p-10">
+      <div #articleImage class="rounded-2xl bg-white p-6 shadow dark:bg-dark dark:shadow-dark lg:col-span-2 lg:p-10">
         <figure class="aspect-video overflow-hidden rounded-lg">
-          <img [src]="blogDetails.img" alt="" class="h-full w-full object-cover">
+          <img title="image" [src]="blogDetails.img" alt="image" class="h-full w-full object-cover">
         </figure>
 
         <ul class="mt-4 flex flex-wrap items-center gap-4 md:gap-6">
@@ -145,7 +145,7 @@
               <div ngxSlickItem *ngFor="let blog of blogs" (click)="checkBlog(blog.id)" class="flex mx-4 cursor-pointer">
                 <div class="relative">
                   <a class="group block aspect-6/4 overflow-hidden rounded-lg">
-                    <img [src]="blog.img" alt=""
+                    <img title="image" [src]="blog.img" alt="image"
                          class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105">
                   </a>
 
@@ -180,44 +180,44 @@
           </div>
         </div>
 
-        <div class="mt-10 lg:mt-14">
-          <h3 class="text-2xl font-semibold leading-tight text-dark dark:text-light lg:text-3xl lg:leading-tight">
-            Leave a Comment
-          </h3>
+<!--        <div class="mt-10 lg:mt-14">-->
+<!--          <h3 class="text-2xl font-semibold leading-tight text-dark dark:text-light lg:text-3xl lg:leading-tight">-->
+<!--            Leave a Comment-->
+<!--          </h3>-->
 
-          <form action="#" class="mt-6 space-y-6 rounded-lg bg-light p-6 dark:bg-dark-2 lg:mt-8 xl:p-12">
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div class="">
-                <label for="name" class="mb-2 block text-sm font-medium text-dark dark:text-light">
-                  Name
-                </label>
-                <input type="text" id="name" name="Name" placeholder="Enter your name" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">
-              </div>
-              <div class="">
-                <label for="email" class="mb-2 block text-sm font-medium text-dark dark:text-light">
-                  Email
-                </label>
-                <input type="email" id="email" name="Email" placeholder="Enter your email" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">
-              </div>
-            </div>
+<!--          <form action="#" class="mt-6 space-y-6 rounded-lg bg-light p-6 dark:bg-dark-2 lg:mt-8 xl:p-12">-->
+<!--            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">-->
+<!--              <div class="">-->
+<!--                <label for="name" class="mb-2 block text-sm font-medium text-dark dark:text-light">-->
+<!--                  Name-->
+<!--                </label>-->
+<!--                <input type="text" id="name" name="Name" placeholder="Enter your name" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">-->
+<!--              </div>-->
+<!--              <div class="">-->
+<!--                <label for="email" class="mb-2 block text-sm font-medium text-dark dark:text-light">-->
+<!--                  Email-->
+<!--                </label>-->
+<!--                <input type="email" id="email" name="Email" placeholder="Enter your email" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20">-->
+<!--              </div>-->
+<!--            </div>-->
 
-            <div class="">
-              <label for="comment" class="mb-2 block text-sm font-medium text-dark dark:text-light">
-                Comment
-              </label>
+<!--            <div class="">-->
+<!--              <label for="comment" class="mb-2 block text-sm font-medium text-dark dark:text-light">-->
+<!--                Comment-->
+<!--              </label>-->
 
-              <textarea name="Comment" id="comment" placeholder="Type details about your inquiry" rows="4" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20"></textarea>
-            </div>
+<!--              <textarea name="Comment" id="comment" placeholder="Type details about your inquiry" rows="4" class="block w-full rounded-lg border border-gray-200 bg-white px-6 py-4 text-base outline-none transition focus:border-dark focus:ring focus:ring-dark/20 disabled:pointer-events-none disabled:opacity-50 dark:border-dark dark:bg-dark dark:text-white dark:focus:border-muted dark:focus:ring-white/20"></textarea>-->
+<!--            </div>-->
 
-            <button type="submit" class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 text-center font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50">
-              <span>Post Comment</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5">
-                <path d="M17.5 11.667v-5h-5"></path>
-                <path d="m17.5 6.667-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </button>
-          </form>
-        </div>
+<!--            <button type="submit" class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-primary px-6 py-4 text-center font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring disabled:pointer-events-none disabled:opacity-50">-->
+<!--              <span>Post Comment</span>-->
+<!--              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="h-5 w-5">-->
+<!--                <path d="M17.5 11.667v-5h-5"></path>-->
+<!--                <path d="m17.5 6.667-7.5 7.5-7.5-7.5"></path>-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--          </form>-->
+<!--        </div>-->
       </div>
     </main>
 
